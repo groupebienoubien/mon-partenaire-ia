@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FBF6EF">
+  <title>Mon Partenaire IA · Le travail qui traîne, préparé pour vous</title>
+  <meta name="description" content="Mon Partenaire IA apprend à connaître votre entreprise, repère ce qui vous fait perdre du temps et le prépare pour vous. Vous gardez le dernier mot.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" id="haut">
+    <div class="container header-inner">
+      <a class="brand" href="#haut" aria-label="Mon Partenaire IA, retour en haut">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Mon Partenaire <strong>IA</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#exemples">Exemples</a>
+        <a href="#fonctionnement">Comment ça marche</a>
+        <a href="#controle">Vous gardez la main</a>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#brainstorm" data-start>Commencer</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Pour les artisans, commerçants, indépendants et TPE</p>
+          <h1>Le travail qui traîne, <em>préparé pour vous.</em><br>Vous n’avez plus qu’à valider.</h1>
+          <p class="lead">Votre partenaire IA repère ce qui vous fait perdre du temps (devis à relancer, avis sans réponse, factures à trier) et le prépare pour vous. Vous gardez toujours le dernier mot.</p>
+          <div class="hero-cta" id="hero-cta">
+            <a class="btn btn-primary btn-lg" href="#brainstorm" data-start>Commencer <span class="btn-sub">· trouver mon premier sujet</span></a>
+            <a class="btn btn-ghost btn-lg" href="#exemples">Voir des exemples</a>
+          </div>
+          <ul class="reassure">
+            <li><span data-icon="clock"></span>5 minutes</li>
+            <li><span data-icon="check"></span>Sans engagement</li>
+            <li><span data-icon="plug"></span>Rien à connecter pour commencer</li>
+          </ul>
+          <div class="pain-picker">
+            <p class="pain-label">Ou regardez directement ce qui vous concerne :</p>
+            <div class="chips" id="hero-pains"></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Aperçu : votre partenaire sur votre téléphone">
+          <div class="blob blob-1" aria-hidden="true"></div>
+          <div class="blob blob-2" aria-hidden="true"></div>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="phone-top">
+                <span class="brand-mark sm" aria-hidden="true"></span>
+                <div>
+                  <p class="phone-title">Votre partenaire</p>
+                  <p class="phone-sub" id="hero-sub">Martin Peinture · Nantes</p>
+                </div>
+              </div>
+              <div class="phone-feed" id="hero-feed" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="hero-personas" id="hero-personas" role="tablist" aria-label="Choisir un exemple"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMESSE -->
+    <section class="promise">
+      <div class="container">
+        <div class="promise-grid">
+          <article class="promise-item">
+            <span class="icon-bubble" data-icon="sparkle"></span>
+            <h3>Il vient vers vous</h3>
+            <p>Pas besoin de savoir quoi demander à l’IA. Il repère ce qui traîne et vous le propose, déjà préparé.</p>
+          </article>
+          <article class="promise-item">
+            <span class="icon-bubble" data-icon="plug"></span>
+            <h3>Avec vos outils actuels</h3>
+            <p>Votre messagerie, votre agenda, vos fichiers. Rien à installer, aucune nouvelle méthode à adopter.</p>
+          </article>
+          <article class="promise-item">
+            <span class="icon-bubble" data-icon="check"></span>
+            <h3>Vous validez d’un geste</h3>
+            <p>Depuis votre téléphone, entre deux rendez-vous. Rien ne part sans votre accord.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXEMPLES -->
+    <section class="section" id="exemples">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">Des situations bien réelles</p>
+            <h2>Ce que votre partenaire peut faire pour vous</h2>
+            <p class="section-lead">Faites défiler, ouvrez une situation pour la voir se dérouler, et touchez <span class="inline-heart" aria-hidden="true">♥</span> sur celles qui vous parlent.</p>
+          </div>
+          <div class="carousel-nav" aria-label="Faire défiler les situations">
+            <button type="button" class="round-btn" id="uc-prev" aria-label="Situations précédentes"><span data-icon="arrow" class="flip"></span></button>
+            <button type="button" class="round-btn" id="uc-next-page" aria-label="Situations suivantes"><span data-icon="arrow"></span></button>
+          </div>
+        </div>
+
+        <div class="filters" role="toolbar" aria-label="Filtrer les situations">
+          <div class="chips chips-scroll" id="persona-filters"></div>
+          <div class="chips chips-scroll" id="cat-filters"></div>
+        </div>
+      </div>
+
+      <div class="carousel" id="uc-carousel">
+        <div class="usecase-track" id="usecase-grid" tabindex="0" aria-label="Situations"></div>
+      </div>
+
+      <div class="container">
+        <div class="carousel-foot">
+          <div class="carousel-progress" aria-hidden="true"><span id="uc-progress"></span></div>
+          <p class="results-count" id="results-count" aria-live="polite"></p>
+        </div>
+
+        <div class="inline-cta" id="inline-cta">
+          <div>
+            <p class="inline-cta-title">Une de ces situations vous ressemble ?</p>
+            <p class="inline-cta-sub">En 5 minutes d’échange, votre partenaire vous aide à trouver par où commencer chez vous.</p>
+          </div>
+          <a class="btn btn-primary" href="#brainstorm" data-start>Trouver mon premier sujet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONCTIONNEMENT -->
+    <section class="section section-tinted" id="fonctionnement">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Comment ça marche</p>
+          <h2>Un partenaire qui progresse avec vous</h2>
+          <p class="section-lead">Pas d’audit de deux heures, pas de méthode à apprendre. Il commence petit, apprend en travaillant avec vous, et vous lui confiez davantage quand vous êtes prêt.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <span class="icon-bubble" data-icon="search"></span>
+            <h3>Comprendre</h3>
+            <p>Il découvre votre entreprise : votre site, vos avis, quelques questions simples. Il démarre avec ce que vous lui donnez.</p>
+            <a class="step-link" href="#memoire" data-learn-link="discovery">Voir comment →</a>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <span class="icon-bubble" data-icon="lightbulb"></span>
+            <h3>Conseiller</h3>
+            <p>Il repère ce qui vous coûte du temps ou de l’argent, et vous propose par où commencer.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <span class="icon-bubble" data-icon="hand"></span>
+            <h3>Agir</h3>
+            <p>Il prépare le travail dans vos outils. Vous validez d’un geste, depuis votre téléphone.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">4</span>
+            <span class="icon-bubble" data-icon="sprout"></span>
+            <h3>Apprendre</h3>
+            <p>Il retient chacune de vos corrections. Plus il vous connaît, plus vous pouvez lui confier.</p>
+            <a class="step-link" href="#memoire" data-learn-link="correction">Voir comment →</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MÉMOIRE / APPRENTISSAGE -->
+    <section class="section" id="memoire">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Il apprend à vous connaître</p>
+          <h2>Il apprend en travaillant avec vous</h2>
+          <p class="section-lead">Pas de questionnaire de deux heures. Il part de ce qui est public, vous pose deux ou trois questions, puis retient chacune de vos corrections. Ce qu’il a <strong>déduit</strong> n’a pas la même valeur que ce que vous avez <strong>confirmé</strong>, et il vous montre toujours d’où il tient ce qu’il sait.</p>
+        </div>
+
+        <div class="learn-tabs" role="tablist" aria-label="Deux moments d’apprentissage">
+          <button type="button" role="tab" class="learn-tab is-active" aria-selected="true" data-learn="discovery">
+            <span class="learn-num">1</span>
+            <span><strong>Il découvre votre entreprise</strong><small>Les 3 premières minutes</small></span>
+          </button>
+          <button type="button" role="tab" class="learn-tab" aria-selected="false" data-learn="correction">
+            <span class="learn-num">2</span>
+            <span><strong>Il retient vos corrections</strong><small>Et les applique ensuite tout seul</small></span>
+          </button>
+        </div>
+
+        <div class="learn-grid">
+          <div class="player" id="learn-player">
+            <div class="player-head">
+              <span class="brand-mark sm" aria-hidden="true"></span>
+              <div>
+                <p class="phone-title">Votre partenaire</p>
+                <p class="phone-sub">Martin Peinture · Nantes</p>
+              </div>
+              <span class="illustratif">Scénario illustratif</span>
+            </div>
+            <div class="player-feed" id="learn-feed" aria-live="polite"></div>
+            <div class="player-controls">
+              <button type="button" class="btn btn-soft btn-xs" id="learn-replay">↺ Rejouer</button>
+              <button type="button" class="btn btn-soft btn-xs" id="learn-skip">Tout afficher</button>
+            </div>
+          </div>
+
+          <div class="memory-card" id="fiche" aria-live="polite" aria-label="Fiche entreprise construite par le partenaire"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTRÔLE -->
+    <section class="section section-tinted" id="controle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Vous gardez la main</p>
+          <h2>Vous décidez de ce que vous lui confiez, tâche par tâche</h2>
+          <p class="section-lead">Au début, il propose et vous validez. Quand il a fait ses preuves sur une tâche, c’est lui qui vous propose d’aller plus loin. Jamais l’inverse.</p>
+        </div>
+
+        <div class="control-grid">
+          <div class="autonomy-card">
+            <p class="card-kicker">Exemple de réglages</p>
+            <ul class="autonomy-list" id="autonomy-list"></ul>
+            <div class="earned">
+              <span class="brand-mark sm" aria-hidden="true"></span>
+              <div>
+                <p>« Vous avez validé mes 10 dernières relances sans les modifier. Voulez-vous que je les envoie directement désormais ? »</p>
+                <div class="earned-actions" id="earned-actions">
+                  <button type="button" class="btn btn-primary btn-xs" data-earned="yes">Oui, vas-y</button>
+                  <button type="button" class="btn btn-soft btn-xs" data-earned="no">Pas encore</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="trust-list">
+            <li><span class="icon-bubble" data-icon="check"></span><div><h3>Rien ne part sans votre accord</h3><p>Tant que vous n’en avez pas décidé autrement, pour chaque tâche.</p></div></li>
+            <li><span class="icon-bubble" data-icon="eye"></span><div><h3>Vous voyez tout</h3><p>Chaque action est notée dans un historique clair, que vous consultez quand vous voulez.</p></div></li>
+            <li><span class="icon-bubble" data-icon="pause"></span><div><h3>Un bouton pause</h3><p>Vous arrêtez tout, à tout moment, en un geste.</p></div></li>
+            <li><span class="icon-bubble" data-icon="shield"></span><div><h3>Vos données restent en Europe</h3><p>Elles ne servent qu’à votre entreprise, et à rien d’autre.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉMARRER -->
+    <section class="section" id="demarrer">
+      <div class="container">
+        <div class="start-card">
+          <div class="start-text">
+            <p class="eyebrow eyebrow-light">Et chez vous ?</p>
+            <h2>Trouvons ensemble votre premier sujet</h2>
+            <p>En quelques minutes d’échange, votre partenaire vous aide à repérer ce qui vous ferait gagner le plus, et vous montre comment il s’y prendrait chez vous.</p>
+            <div class="picked" id="picked"></div>
+            <a class="btn btn-primary btn-lg" href="#brainstorm" id="start-btn" data-start>Commencer <span class="btn-sub">· trouver mon premier sujet</span></a>
+            <p class="start-note">Démonstration interactive · 5 minutes · vous jouez le rôle de Julien, artisan peintre</p>
+          </div>
+          <div class="start-visual" aria-hidden="true">
+            <div class="mini-bubble mb-1">Qu’est-ce qui vous prend le plus de temps en ce moment ?</div>
+            <div class="mini-bubble mb-2 me">Les devis, clairement…</div>
+            <div class="mini-bubble mb-3">Je vois. Regardons comment vous les préparez aujourd’hui.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#haut"><span class="brand-mark sm" aria-hidden="true"></span><span class="brand-name">Mon Partenaire <strong>IA</strong></span></a>
+      <p class="footer-note">Maquette de démonstration. Les entreprises, scénarios et chiffres présentés sont illustratifs. Aucune donnée n’est collectée.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <a class="btn btn-primary" href="#brainstorm" data-start tabindex="-1">Commencer <span class="btn-sub">· 5 min</span></a>
+  </div>
+
+  <!-- Fenêtre : cas d'usage -->
+  <div class="modal" id="uc-modal" role="dialog" aria-modal="true" aria-labelledby="uc-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" tabindex="-1">
+      <button type="button" class="modal-close" data-close aria-label="Fermer">×</button>
+      <div class="modal-body">
+      <div class="uc-layout">
+        <div class="uc-story">
+          <div class="uc-head">
+            <span class="tag" id="uc-tag"></span>
+            <h2 id="uc-title"></h2>
+            <p class="uc-hook" id="uc-hook"></p>
+            <div class="uc-persona" id="uc-persona"></div>
+          </div>
+          <div class="uc-player-mobile-slot" id="uc-mobile-slot"></div>
+          <div class="uc-section">
+            <h3><span class="icon-inline" data-icon="sparkle"></span>Ce que fait votre partenaire</h3>
+            <ol class="uc-how" id="uc-how"></ol>
+          </div>
+          <div class="uc-section">
+            <h3><span class="icon-inline" data-icon="shield"></span>Ce qui reste sous votre contrôle</h3>
+            <ul class="uc-list" id="uc-control"></ul>
+          </div>
+          <div class="uc-two">
+            <div class="uc-section uc-benefit">
+              <h3><span class="icon-inline" data-icon="sprout"></span>Ce que vous y gagnez</h3>
+              <p id="uc-benefit"></p>
+            </div>
+            <div class="uc-section">
+              <h3><span class="icon-inline" data-icon="plug"></span>Pour démarrer</h3>
+              <ul class="uc-list" id="uc-needs"></ul>
+            </div>
+          </div>
+          <div class="uc-actions">
+            <button type="button" class="btn btn-like" id="uc-like" aria-pressed="false"><span class="heart" aria-hidden="true">♥</span> <span class="like-label">Ça me parle</span></button>
+            <button type="button" class="btn btn-ghost" id="uc-next">Situation suivante →</button>
+          </div>
+        </div>
+        <div class="uc-player-slot" id="uc-desktop-slot">
+          <div class="player" id="uc-player">
+            <div class="player-head">
+              <span class="brand-mark sm" aria-hidden="true"></span>
+              <div>
+                <p class="phone-title">Votre partenaire</p>
+                <p class="phone-sub" id="player-sub"></p>
+              </div>
+              <span class="illustratif">Scénario illustratif</span>
+            </div>
+            <div class="player-feed" id="player-feed" aria-live="polite"></div>
+            <div class="player-controls">
+              <button type="button" class="btn btn-soft btn-xs" id="player-replay">↺ Rejouer</button>
+              <button type="button" class="btn btn-soft btn-xs" id="player-skip">Tout afficher</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fenêtre : brainstorming (lot 2) -->
+  <div class="modal modal-bs" id="bs-modal" role="dialog" aria-modal="true" aria-labelledby="bs-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel bs-panel" tabindex="-1" data-view="chat">
+      <header class="bs-head">
+        <span class="brand-mark sm" aria-hidden="true"></span>
+        <div class="bs-head-text">
+          <p class="phone-title" id="bs-title">Trouvons votre premier sujet</p>
+          <p class="phone-sub">Démonstration · vous êtes Julien, artisan peintre</p>
+        </div>
+        <button type="button" class="btn btn-soft btn-xs bs-restart" id="bs-restart" aria-label="Recommencer la démonstration">↺<span class="bs-restart-label"> Recommencer</span></button>
+        <button type="button" class="modal-close bs-close" data-close aria-label="Fermer">×</button>
+      </header>
+      <ol class="bs-phases" id="bs-phases" aria-label="Étapes"></ol>
+      <div class="bs-tabs" role="tablist">
+        <button type="button" role="tab" class="bs-tab is-active" aria-selected="true" data-bs-view="chat">Échange</button>
+        <button type="button" role="tab" class="bs-tab" aria-selected="false" data-bs-view="fiche">Ma fiche <span class="bs-badge" id="bs-badge" hidden></span></button>
+      </div>
+      <div class="bs-body">
+        <section class="bs-chat" aria-label="Échange avec votre partenaire">
+          <div class="bs-feed" id="bs-feed" aria-live="polite"></div>
+          <div class="bs-input">
+            <div class="bs-choices" id="bs-choices"></div>
+            <div class="bs-free" aria-hidden="true"><span data-icon="mic"></span>Écrire ou dicter… <small>(simulé dans la démo)</small></div>
+          </div>
+        </section>
+        <aside class="bs-fiche" id="bs-fiche" aria-live="polite" aria-label="Fiche de cas d’usage"></aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/brainstorm-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
